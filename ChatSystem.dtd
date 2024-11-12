@@ -1,0 +1,30 @@
+<!ELEMENT ChatSystem (Users, Groups, Messages)>
+
+<!ELEMENT Users (User+)>
+<!ELEMENT User (UserID, FirstName, LastName, Sex, Email, Following*)>
+<!ATTLIST User id ID #REQUIRED
+               joinDate CDATA #REQUIRED>
+
+<!ELEMENT UserID (#PCDATA)>
+<!ELEMENT FirstName (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT Sex (#PCDATA)> 
+<!ELEMENT Email (#PCDATA)>
+<!ELEMENT Following EMPTY>
+<!ATTLIST Following userID IDREF #REQUIRED>
+
+<!ELEMENT Groups (Group+)>
+<!ELEMENT Group (GroupID, GroupName, Description, Members)>
+<!ELEMENT GroupID (#PCDATA)>
+<!ELEMENT GroupName (#PCDATA)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Members (UserID+)>
+
+<!ELEMENT Messages (Message+)>
+<!ELEMENT Message (SenderID, ReceiverID, Content)>
+<!ATTLIST Message id ID #REQUIRED
+                 timestamp CDATA #REQUIRED>
+
+<!ELEMENT SenderID (#PCDATA)>
+<!ELEMENT ReceiverID (#PCDATA)>
+<!ELEMENT Content (#PCDATA)>

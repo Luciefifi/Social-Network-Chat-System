@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ChatSystem SYSTEM "ChatSystem.dtd">
+<ChatSystem>
+    <Users>
+        <User id="u1" joinDate="2023-01-15">
+            <UserID>1</UserID>
+            <FirstName>John</FirstName>
+            <LastName>Doe</LastName>
+            <Sex>Male</Sex>
+            <Email>johndoe@example.com</Email>
+            <Following userID="u2"/>
+            <Following userID="u1"/>
+        </User>
+        <User id="u2" joinDate="2023-02-10">
+            <UserID>2</UserID>
+            <FirstName>Jane</FirstName>
+            <LastName>Smith</LastName>
+            <Sex>Female</Sex>
+            <Email>janesmith@example.com</Email>
+            <Following userID="u1"/>
+        </User>
+    </Users>
+
+    <Groups>
+        <Group>
+            <GroupID>g1</GroupID>
+            <GroupName>Project Team</GroupName>
+            <Description>A group for discussing project updates and sharing resources.</Description>
+            <Members>
+                <UserID>1</UserID>
+                <UserID>2</UserID>
+            </Members>
+        </Group>
+    </Groups>
+
+    <Messages>
+        <Message id="m1" timestamp="2023-03-01T10:15:00">
+            <SenderID>1</SenderID>
+            <ReceiverID>2</ReceiverID>
+            <Content>Hello Jane!</Content>
+        </Message>
+        <Message id="m2" timestamp="2023-03-01T10:16:00">
+            <SenderID>2</SenderID>
+            <ReceiverID>1</ReceiverID>
+            <Content>Hi John!</Content>
+        </Message>
+    </Messages>
+</ChatSystem>
